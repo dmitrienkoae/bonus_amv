@@ -1,0 +1,6 @@
+abc
+eab
+fgh
+ghf
+hed
+cde

@@ -8,8 +8,9 @@ TEST(Test_superStringCost1, super_string) {
  	bool b = true;
  	for (auto i : v){
    	if( super_str.find(i) == string::npos)
-     		 b = false;
+     		b = false;
 	EXPECT_EQ(b, true);
+	EXPECT_EQ(11, super_str.size());
 }
 
 TEST(Test_superStringCost2, super_string) {
@@ -18,8 +19,9 @@ TEST(Test_superStringCost2, super_string) {
  	bool b = true;
   	for (auto i : v){
     	if( super_str.find(i) == string::npos)
-    	  b = false;
+    		b = false;
 	EXPECT_EQ(b, true);
+	EXPECT_EQ(3, super_str.size());
 }
 
 TEST(Test_superStringCost3, super_string) {
@@ -30,6 +32,7 @@ TEST(Test_superStringCost3, super_string) {
    	if( super_str.find(i) == string::npos)
       		b = false;
 	EXPECT_EQ(b, true);
+	EXPECT_EQ(13, super_str.size());
 }
 
 

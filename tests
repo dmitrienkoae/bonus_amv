@@ -4,31 +4,31 @@
 
 TEST(Test_superStringCost1, super_string) {
 	Vstr v = { "a", "aa", "sdf", "fa", "ahg", "hju", "ut" };
-  vector::string super_str = super_string(v);
-  bool b = true;
-  for (auto i : v){
-    if( super_str.find(i) == string::npos)
-      b = false;
+  	vector::string super_str = super_string(v);
+ 	bool b = true;
+ 	for (auto i : v){
+   	if( super_str.find(i) == string::npos)
+     		 b = false;
 	EXPECT_EQ(b, true);
 }
 
 TEST(Test_superStringCost2, super_string) {
 	Vstr v = { "a", "aa", "aaa" };
 	vector::string super_str = super_string(v);
-  bool b = true;
-  for (auto i : v){
-    if( super_str.find(i) == string::npos)
-      b = false;
+ 	bool b = true;
+  	for (auto i : v){
+    	if( super_str.find(i) == string::npos)
+    	  b = false;
 	EXPECT_EQ(b, true);
 }
 
 TEST(Test_superStringCost3, super_string) {
 	Vstr v = { "cde", "abc", "eab", "fgh", "ghf", "hed"};
 	vector::string super_str = super_string(v);
-  bool b = true;
-  for (auto i : v){
-    if( super_str.find(i) == string::npos)
-      b = false;
+  	bool b = true;
+  	for (auto i : v){
+   	if( super_str.find(i) == string::npos)
+      		b = false;
 	EXPECT_EQ(b, true);
 }
 

@@ -18,10 +18,10 @@ class OverlapGraph {
 public:
 	OverlapGraph();
 	OverlapGraph(size_t n);
-	OverlapGraph(const Vstr&);
+	OverlapGraph( Vstr&);
 	~OverlapGraph();
 
-	void overlaps(const Vstr&);
+	void overlaps(Vstr&);
 
 	size_t size() const;
 
@@ -36,4 +36,3 @@ private:
 	VVint m;
 	size_t n;
 };
-

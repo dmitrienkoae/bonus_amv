@@ -1,4 +1,5 @@
 #include "overlap_graph.hpp"
+#include "FSM.cpp"
 
 OverlapGraph::OverlapGraph(){
 }
@@ -8,7 +9,7 @@ OverlapGraph::OverlapGraph(size_t n) {
 	this->m = VVint(n, Vint(n));
 }
 
-OverlapGraph::OverlapGraph(const Vstr& vs) {
+OverlapGraph::OverlapGraph( Vstr& vs) {
 	overlaps(vs);
 }
 
@@ -16,18 +17,40 @@ OverlapGraph::~OverlapGraph() {
 }
 
 
-void OverlapGraph::overlaps(const Vstr& vs) {
+void OverlapGraph::overlaps( Vstr& vs) {
+
+	
+	for (size_t i = 0; i < vs.size(); i++) {
+		for (size_t j = 0; j < vs.size(); j++) {
+			if (i == j) continue;
+			if (vs[i].find(vs[j]) != std::string::npos) {
+				vs.erase(vs.begin() + j);
+
+			}
+		}
+	}
+	
+
 	this->n = vs.size();
 	this->m = VVint(n, Vint(n));
-	for(size_t i = 0; i < n; ++i)
-		for(size_t j = 0; j < n; ++j)
-			m[i][j] = overlap(vs[i], vs[j]);
+
+	for (size_t i = 0; i < n; ++i) {
+		FSM automat(vs[i]);
+		for (size_t j = 0; j < n; ++j)
+			if (i != j) {
+				m[i][j] = automat.OverlapStr(vs[j]);  //
+				//m[i][j] = overlap(vs[i], vs[j]);
+			}
+			else
+				m[i][j] = 0;
+	}
 }
 
 size_t OverlapGraph::size() const {
 	return n;
 }
 
+/*
 int OverlapGraph::overlap(const std::string& s1, const std::string& s2) {
 	if(&s1 == &s2)
 		return 0;
@@ -48,7 +71,7 @@ int OverlapGraph::overlap(const std::string& s1, const std::string& s2) {
 
 	return res;
 }
-
+*/
 
 int& OverlapGraph::at(size_t i, size_t j) {
 	return m[i][j];

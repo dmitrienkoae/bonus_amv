@@ -31,7 +31,7 @@ public:
 	int at(size_t i, size_t j) const;
 
 private:
-	int overlap(const std::string&, const std::string&);
+	//int overlap(const std::string&, const std::string&);
 
 	VVint m;
 	size_t n;

@@ -1,5 +1,5 @@
-#include "pch.h"
-//#include "gtest/gtest.h"
+
+#include "gtest/gtest.h"
 #include "../shortest_superstring/superstring.cpp"
 
 TEST(Test_superStringCost1, super_string) {

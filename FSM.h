@@ -16,4 +16,3 @@ public:
 	int OverlapStr(std::string str);
 	~FSM();
 };
-

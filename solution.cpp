@@ -72,7 +72,7 @@ void shift(const OverlapGraph& g, Lint& cycle) {
 	}
 }
 
-std::string super_string(const Vstr& vs) {
+std::string super_string(Vstr& vs) {
 	OverlapGraph g(vs);
 	LLint cycles = get_cycles(g);
 	std::string super_str;

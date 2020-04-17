@@ -5,23 +5,13 @@
 #include "solution.hpp"
 
 int main() {
-	std::vector<std::string> vs;
-	std::string s;
-	std::string line;
-	std::ifstream in("D:\\tests.txt"); 
-	if (in.is_open())
-	{
-		while (getline(in, line))
-		{
-			vs.push_back(line);
-		}
-	}
-	in.close();
-
-	OverlapGraph g(vs);
-	//std::cout << g << std::endl;
-	std::cout << super_string(vs).size() << std::endl;
-	std::cout << super_string(vs) << std::endl;
+	std::vector<std::string> vs = {"eab", "fgh", "ghf", "hed", "abc", "cde"};
+	std::cout << "Sum length : "<< super_string(vs).size() << std::endl;
+	std::cout << "Superstring : " <<super_string(vs) << std::endl;
+	vs = { "a", "aa", "sdf", "fa", "ahg", "hju", "ut" };
+	std::cout << "Sum length : " << super_string(vs).size() << std::endl;
+	std::cout << "Superstring : " << super_string(vs) << std::endl;
 return 0;
 }
+
 
